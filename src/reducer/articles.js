@@ -44,6 +44,7 @@ export default (articles = defaultState, action) => {
 
         case LOAD_ARTICLE + SUCCESS:
             return articles.setIn(['entities', payload.id], new ArticleModel(response))
+        //я б и commentsLoading здесь делал
         case LOAD_COMMENTS + SUCCESS:
             return articles.setIn(['entities', payload.articleId, 'commentsLoaded'], true)
         
