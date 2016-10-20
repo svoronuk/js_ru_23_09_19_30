@@ -1,7 +1,7 @@
 import { Map } from 'immutable'
 
 export function getRelation(entity, relation, storeState) {
-    if (!entity[relation] || !storeState[relation]) return []
+    if (!entity[relation] || !storeState[relation]) return new Map({})
     return entity[relation].map(id => storeState[relation].getIn(['entities', id]))
 }
 
